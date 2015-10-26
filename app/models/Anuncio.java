@@ -200,8 +200,8 @@ public class Anuncio {
 		String data = "";
 		
 		data += DIA[datapublicacao.get(Calendar.DAY_OF_WEEK)-1];
-		data += ", " + datapublicacao.get(Calendar.DAY_OF_WEEK);
-		data += " " + MES[datapublicacao.get(Calendar.DAY_OF_WEEK)-1];
+		data += ", " + datapublicacao.get(Calendar.DATE);
+		data += " " + MES[datapublicacao.get(Calendar.MONTH)];
 		data += " " + datapublicacao.get(Calendar.YEAR);
 		data += " - " + datapublicacao.get(Calendar.HOUR_OF_DAY);
 		data += ":" + datapublicacao.get(Calendar.MINUTE);
