@@ -1,4 +1,4 @@
-@(anuncios : List[Anuncio], estilos : List[Estilo], instrumentos : List[Instrumento])
+@(anuncios : List[Anuncio], estilos : List[Estilo], instrumentos : List[Instrumento], sucessos: Int)
 
 <html lang="">
 
@@ -63,6 +63,7 @@
                     Band Mania!
                     <small>Encontre sua banda metade</small>
                 </h1>
+                <p>Já ajudamos @sucessos pessoas a encontrarem parceiros!</p>
 				
 				@for(anuncio <- anuncios){
                 <!-- First Blog Post -->

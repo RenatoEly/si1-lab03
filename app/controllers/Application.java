@@ -26,7 +26,7 @@ public class Application extends Controller {
 		List<Anuncio> anuncios = dao.getAnuncios();
 		List<Estilo> estilos = dao.findAllByClass(Estilo.class);
 		List<Instrumento> instrumentos = dao.findAllByClass(Instrumento.class);
-		return ok(views.html.index.render(anuncios,estilos,instrumentos));
+		return ok(views.html.index.render(anuncios,estilos,instrumentos,dao.getQntAnunciosSucesso()));
 	}
 
 	@Transactional
@@ -104,7 +104,7 @@ public class Application extends Controller {
 		}
 		
 		List<Anuncio> anuncios = dao.findAnuncio(instruments, estilosgosta, palavrachave, interesse);
-		return ok(views.html.index.render(anuncios,dao.findAllByClass(Estilo.class),dao.findAllByClass(Instrumento.class)));
+		return ok(views.html.index.render(anuncios,dao.findAllByClass(Estilo.class),dao.findAllByClass(Instrumento.class),dao.getQntAnunciosSucesso()));
 	}
 	
 	@Transactional

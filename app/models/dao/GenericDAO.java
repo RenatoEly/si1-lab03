@@ -145,6 +145,12 @@ public class GenericDAO {
 			throw new IllegalArgumentException("Codigo incorreto!");
 		}
 	}
+	
+	public int getQntAnunciosSucesso(){
+		String hql = "FROM Anuncio c WHERE c.sucesso = 'true' ORDER BY datapublicacao DESC";
+		Query hqlQuery = JPA.em().createQuery(hql);
+		return hqlQuery.getResultList().size();
+	}
 
 	private Query createQuery(String query) {
 		return JPA.em().createQuery(query);

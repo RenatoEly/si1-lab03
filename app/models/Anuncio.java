@@ -19,6 +19,7 @@ public class Anuncio {
 	private static final String[] DIA = new String[]{"Dom","Seg","Ter","Qua","Qui","Sex","Sab"};
 	private static final String[] MES = new String[]{"Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez"};
 	
+	
 	@Id
 	@GeneratedValue
 	private long id;
