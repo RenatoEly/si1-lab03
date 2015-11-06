@@ -134,6 +134,12 @@
                 </div>
                 </div>
                 
+                <br>
+                <form id="form1" name="form1" action="@routes.Application.finaliza()" method="get">
+                <input id="id" type="hidden" name="id" value="@anuncio.getId()">
+                <input type="submit" value="Finalizar">
+                </form>
+                
                 <hr>
                 
                 }
@@ -188,8 +194,6 @@
                         <div class="col-lg-6">
                             <ul class="list-unstyled">
                                 <li><a href="@routes.Application.anuncio()">Criar anúncio</a>
-                                </li>
-                                <li><a href="#">Finalizar anúncio</a>
                                 </li>
                             </ul>
                         </div>

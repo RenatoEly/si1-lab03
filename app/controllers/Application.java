@@ -107,8 +107,12 @@ public class Application extends Controller {
 		return ok(views.html.index.render(anuncios,dao.findAllByClass(Estilo.class),dao.findAllByClass(Instrumento.class)));
 	}
 	
+	@Transactional
 	public static Result finaliza(){
-		return ok(views.html.finaliza.render());
+		DynamicForm filledForm = Form.form().bindFromRequest();
+		String idanuncio = filledForm.get("id");
+		Anuncio anuncio = dao.findByEntityId(Anuncio.class, Long.parseLong(idanuncio));
+		return ok(views.html.finaliza.render(anuncio));
 	}
 	
 	@Transactional
@@ -121,9 +125,9 @@ public class Application extends Controller {
 		try{
 			dao.finalizarAnuncio(idanuncio,codigo,isSucesso);
 		}catch(IllegalArgumentException e){
-			return badRequest(views.html.finaliza.render());
+			Anuncio anuncio = dao.findByEntityId(Anuncio.class, Long.parseLong(idanuncio));
+			return badRequest(views.html.finaliza.render(anuncio));
 		}
-
 		return redirect(routes.Application.index());
 	}
 }

@@ -257,4 +257,8 @@ public class Anuncio {
 	public void setSucesso(boolean sucesso) {
 		this.sucesso = sucesso;
 	}
+	
+	public long getId(){
+		return id;
+	}
 }
