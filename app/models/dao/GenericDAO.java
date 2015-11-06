@@ -135,7 +135,7 @@ public class GenericDAO {
 	}
 	
 	public void finalizarAnuncio(String id, String codigo, boolean sucesso){
-		Anuncio anuncio = (Anuncio) findByAttributeName("Anuncio", "id", id);
+		Anuncio anuncio = findByEntityId(Anuncio.class, Long.parseLong(id));
 		if(anuncio.getCodigo().equals(codigo)){
 			anuncio.setFinalizado(true);
 			anuncio.setSucesso(sucesso);
